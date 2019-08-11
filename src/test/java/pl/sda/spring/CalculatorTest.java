@@ -97,19 +97,11 @@ public class CalculatorTest {
     public void shouldReturnExpectedResultForGivenArgumentsOnPowerOperation(){
         //given
         double arg1 = 2.0;
-        double arg2 = 3.0;
+        double arg2 = -3.0;
         //then
         double actual = calculator.calculate(OperationType.POWER, arg1, arg2);
         //when
-        Assert.assertEquals(8, actual, 0);
+        Assert.assertEquals(0.125, actual, 0);
     }
-    @Test(expected = ArithmeticException.class)
-    public void shouldReturnArithmeticExceptionForGivenArgumentsOnPowerOperationIfPowerIsMinus(){
-        //given
-        double arg1 = 2.0;
-        double arg2 = -3.0;
-        //when
-        calculator.calculate(OperationType.POWER, arg1, arg2);
 
-    }
 }
